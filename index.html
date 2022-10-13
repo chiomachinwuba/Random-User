@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Random User Generator</title>
+</head>
+<body>
+    <div id="app">
+        <!--To add the picture from the js to html, we use v-bind. it is a dynamic variable bcos we are using v-bind-->
+        <img :class="gender" v-bind:src="picture" :alt="`${firstName} ${lastName}`"> <!--If we want to put the firstname and lastname as the alt value, we use v-bind and also the Backticksand moneysign etc. There is a short cut for v-bind, you can add only yht colon.-->
+        <h1>{{firstName}} {{lastName}}</h1>
+        <h3>Email: {{email}}</h3>
+        <button v-on:click="getUser()" :class="gender">Get Random User</button> <!--To add the event listener, we use v-on:click. it is going to call a method within an app called getUser-->
+
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
